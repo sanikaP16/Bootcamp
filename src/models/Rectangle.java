@@ -1,6 +1,6 @@
 package models;
 
-public class Rectangle implements CalculableShape{
+public class Rectangle implements CalculableShape {
     private final double length;
     private final double width;
 
@@ -10,11 +10,11 @@ public class Rectangle implements CalculableShape{
     }
 
     public double area() {
-        return  (this.length*this.width);
+        return this.length * this.width;
     }
 
     @Override
     public double perimeter() {
-        return (2*(this.length+this.width));
+        return 2 * (this.length + this.width);
     }
 }
