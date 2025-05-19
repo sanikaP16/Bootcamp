@@ -9,10 +9,10 @@ public class Main {
         MyMath op = new MyMath(6, 7);
         int addtion = op.add();
         System.out.println(addtion);
-        Rectangle rectangle = new Rectangle(4,6);
+        Rectangle rectangle = new Rectangle(4, 6);
         int area = (int) rectangle.area();
 
-        System.out.println("The area of rectangle"+area);
+        System.out.println("The area of rectangle" + area);
 
     }
 }
