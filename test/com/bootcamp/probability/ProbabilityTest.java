@@ -10,7 +10,7 @@ class ProbabilityTest {
         Probability chance = Probability.create(0.25);
         Probability expected = Probability.create(0.25);
 
-        assertEquals(expected.toPercentage(), chance.toPercentage());
+        assertEquals(expected, chance);
     }
 
     @Test
