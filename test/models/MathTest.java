@@ -8,7 +8,7 @@ class MathTest {
 
     @Test
     void add() {
-        Math op = new Math(7,8);
+        MyMath op = new MyMath(7,8);
 
         assertEquals(15, op.add());
     }

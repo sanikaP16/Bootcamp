@@ -1,10 +1,10 @@
 package models;
 
-public class Math {
+public class MyMath {
     private final int i;
     private final int j;
 
-    public Math(int i, int j) {
+    public MyMath(int i, int j) {
         this.i = i;
         this.j = j;
     }
