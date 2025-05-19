@@ -8,14 +8,16 @@ class ProbabilityTest {
     @Test
     void probability() {
         Probability chance = Probability.create(0.25);
-        assertEquals(25, chance.toPercentage());
+        Probability expected = Probability.create(0.25);
+
+        assertEquals(expected.toPercentage(), chance.toPercentage());
     }
 
     @Test
     void probabilityForTwo() {
         Probability chance = Probability.create(0.75);
-
-        assertEquals(75, chance.toPercentage());
+        Probability expected = Probability.create(0.75);
+        assertEquals(expected.toPercentage(), chance.toPercentage());
     }
 
     @Test
@@ -26,9 +28,10 @@ class ProbabilityTest {
     }
 
     @Test
-    void probabilityForZero() {
+    void probabilityForInvalidNumbers() {
         RuntimeException runtimeException = assertThrows(RuntimeException.class, () -> Probability.create(5));
         assertEquals("Number of coins must be at least 1", runtimeException.getMessage());
+        assertThrows(RuntimeException.class, () -> Probability.create(-0.1));
     }
 
     @Test
@@ -39,39 +42,40 @@ class ProbabilityTest {
 
         assertEquals(expected, one.and(two));
     }
+
     @Test
-        void probabilityOfGettingAtleastOne() {
+    void probabilityOfGettingAtleastOne() {
         Probability one = Probability.create(0.5);
         Probability two = Probability.create(0.5);
         Probability expected = Probability.create(0.75);
 
         assertEquals(expected, one.or(two));
     }
+
     @Test
-        void probabilityOfGettingAtleastOne2() {
+    void probabilityOfGettingAtleastOne2() {
         Probability one = Probability.create(0.8);
         Probability two = Probability.create(0.8);
         Probability expected = Probability.create(0.96);
 
-        assertEquals(expected,one.or(two));
+        assertEquals(expected, one.or(two));
     }
+
     @Test
-        void probabilityOfGettingAtleastOne3() {
+    void probabilityOfGettingAtleastOne3() {
         Probability one = Probability.create(0.1);
         Probability two = Probability.create(0.2);
         Probability expected = Probability.create(0.28);
 
-        assertEquals(expected,one.or(two));
+        assertEquals(expected, one.or(two));
     }
 
     @Test
-        void probabilityOfGettingAtleastOne4() {
+    void probabilityOfGettingAtleastOne4() {
         Probability one = Probability.create(1);
         Probability two = Probability.create(1);
         Probability expected = Probability.create(1);
 
-        assertEquals(expected,one.or(two));
+        assertEquals(expected, one.or(two));
     }
-
-
 }

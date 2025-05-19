@@ -17,12 +17,12 @@ public class Probability {
         return new Probability(chance);
     }
 
-    public double toPercentage() {
-        return this.chance * 100;
+    public Probability toPercentage() {
+        return new Probability(this.chance * 100);
     }
 
-    public double compliment() {
-        return (1 - this.chance) * 100;
+    public Probability compliment() {
+        return new Probability((1 - this.chance) * 100);
     }
 
     @Override
@@ -39,12 +39,11 @@ public class Probability {
 
     public Probability and(Probability other) {
         double result = this.chance * other.chance;
-        return Probability.create(result);
+        return new Probability(result);
     }
 
     public Probability or(Probability other) {
         double result = (this.chance + other.chance) - (this.chance * other.chance);
-        System.out.println(result);
-        return  Probability.create(result);
+        return  new Probability(result);
     }
 }
