@@ -9,18 +9,19 @@ class ProbabilityTest {
     @Test
     void probability() {
         Probability chance = Probability.create(0.25);
-        assertEquals(0.25, chance.compliment());
+        assertEquals(25, chance.compliment());
     }
 
     @Test
     void probabilityForTwo() {
         Probability chance = Probability.create(0.75);
-        assertEquals(0.75, chance.compliment());
+        assertEquals(75, chance.compliment());
     }
 
     @Test
     void probabilityForZero() {
         RuntimeException runtimeException = assertThrows(RuntimeException.class, () -> Probability.create(5));
+        assertEquals("Number of coins must be at least 1",runtimeException.getMessage());
     }
 
     @Test

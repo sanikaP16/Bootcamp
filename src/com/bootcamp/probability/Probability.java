@@ -18,7 +18,7 @@ public class Probability {
     }
 
     public double compliment() {
-        return this.chance;
+        return this.chance *100;
     }
 
     @Override
