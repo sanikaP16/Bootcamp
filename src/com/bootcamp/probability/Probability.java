@@ -6,7 +6,7 @@ public class Probability {
 
     private final double chance;
 
-    public Probability(double chance) {
+    private Probability(double chance) {
         this.chance = chance;
     }
 
@@ -17,8 +17,12 @@ public class Probability {
         return new Probability(chance);
     }
 
+    public double toPercentage() {
+        return this.chance * 100;
+    }
+
     public double compliment() {
-        return this.chance *100;
+        return (1 - this.chance) * 100;
     }
 
     @Override
@@ -33,8 +37,14 @@ public class Probability {
         return Objects.hashCode(chance);
     }
 
-    public Probability and(Probability second) {
-        double result = this.chance * second.chance;
+    public Probability and(Probability other) {
+        double result = this.chance * other.chance;
         return Probability.create(result);
+    }
+
+    public Probability or(Probability other) {
+        double result = (this.chance + other.chance) - (this.chance * other.chance);
+        System.out.println(result);
+        return  Probability.create(result);
     }
 }
