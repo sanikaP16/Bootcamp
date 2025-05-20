@@ -2,20 +2,41 @@ package com.bootcamp.length;
 
 import com.bootcamp.probability.Probability;
 
+import java.util.Objects;
+
 public class Length {
-    private final double feet;
     private final double inches;
 
-    private Length(double feet, double inches) {
-        this.feet = feet;
+    private Length(double inches) {
         this.inches = inches;
     }
 
-    public  static Length init(double feet, double inches){
-        if (feet > 0 || inches < 0) {
-            throw new RuntimeException("Invalid Lengths");
-        }
-        return new Length(feet,inches);
+    public static Length convertFromFeet(double feet) {
+        return new Length(feet*12);
     }
 
+    public static Length convertFromInches(double inches) {
+        return new Length(inches);
+    }
+
+    public static Length convertFromCm(double centimeter) {
+        return new Length(centimeter / 2.54);
+    }
+
+    public static Length convertFromMM(double mm) {
+        return new Length(mm / 25.4);
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Length length = (Length) o;
+        return Double.compare(inches, length.inches) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(inches);
+    }
 }
