@@ -1,4 +1,4 @@
-package models;
+package com.bootcamp.models;
 
 public class Rectangle implements CalculableShape {
     private final double length;

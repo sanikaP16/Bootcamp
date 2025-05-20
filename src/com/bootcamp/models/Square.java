@@ -1,4 +1,4 @@
-package models;
+package com.bootcamp.models;
 
 public class Square implements CalculableShape {
     public final double side;

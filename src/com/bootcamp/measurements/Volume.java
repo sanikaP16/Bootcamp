@@ -1,4 +1,4 @@
-package com.bootcamp.length.volumes;
+package com.bootcamp.measurements;
 
 import java.util.Objects;
 

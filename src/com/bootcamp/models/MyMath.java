@@ -1,4 +1,4 @@
-package models;
+package com.bootcamp.models;
 
 public class MyMath {
     private final int i;

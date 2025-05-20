@@ -1,6 +1,6 @@
-import models.MyMath;
-import models.Rectangle;
-import models.Square;
+import com.bootcamp.models.MyMath;
+import com.bootcamp.models.Rectangle;
+import com.bootcamp.models.Square;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.

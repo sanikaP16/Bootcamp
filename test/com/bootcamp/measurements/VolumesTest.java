@@ -1,6 +1,5 @@
-package com.bootcamp.volumes;
+package com.bootcamp.measurements;
 
-import com.bootcamp.length.volumes.Volume;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

@@ -1,6 +1,4 @@
-package com.bootcamp.length;
-
-import com.bootcamp.probability.Probability;
+package com.bootcamp.measurements;
 
 import java.util.Objects;
 
@@ -26,6 +24,7 @@ public class Length {
     public static Length convertFromMM(double mm) {
         return new Length(mm / 25.4);
     }
+
 
     @Override
     public boolean equals(Object o) {

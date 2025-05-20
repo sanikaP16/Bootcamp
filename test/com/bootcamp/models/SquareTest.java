@@ -1,5 +1,6 @@
-package models;
+package com.bootcamp.models;
 
+import com.bootcamp.models.Square;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
