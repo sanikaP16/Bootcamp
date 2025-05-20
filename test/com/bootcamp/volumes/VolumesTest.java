@@ -20,24 +20,9 @@ class VolumesTest {
 
         assertEquals(volumesFromGallon,volumesFromLitters);
     }
-//    @Test
-//    void checkInvalidVolumes(){
-//        assertThrows(RuntimeException.class, () -> Volume.validateVolume(0, 3.78 ));
-//        assertThrows(RuntimeException.class, () -> Volume.validateVolume(10, -4 ));
-//    }
-//
-//    @Test
-//    void checkWith2Liter(){
-//        Volume volumes = Volume.validateVolume(2, 7.56);
-//        boolean result = volumes.areEqual();
-//        assert(result);
-//    }
-//    @Test
-//    void checkWithNotEqual(){
-//        Volume volumes = Volume.validateVolume(1.5, 7.56);
-//
-//        boolean result = volumes.areEqual();
-//        assertFalse(result);
-//    }
-
+    @Test
+    void checkInvalidVolumes(){
+        assertThrows(RuntimeException.class, () -> Volume.convertFromGallon(-8 ));
+        assertThrows(RuntimeException.class, () -> Volume.convertFromLiters( -4 ));
+    }
 }

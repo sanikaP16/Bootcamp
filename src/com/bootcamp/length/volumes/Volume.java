@@ -3,7 +3,6 @@ package com.bootcamp.length.volumes;
 import java.util.Objects;
 
 public class Volume {
-    private static double gallon;
     private final double liter;
 
     private Volume(double liter) {
@@ -11,11 +10,18 @@ public class Volume {
     }
 
     public static Volume convertFromLiters(double liters) {
-        return new Volume(1 * liters);
+        return getVolumes(1, liters);
+    }
+
+    private static Volume getVolumes(double a, double unit) {
+        if (unit <= 0) {
+            throw new RuntimeException("Invalid Volume");
+        }
+        return new Volume(a * unit);
     }
 
     public static Volume convertFromGallon(double gallon) {
-        return new Volume(3.78 * gallon);
+        return getVolumes(3.78, gallon);
     }
 
     @Override
