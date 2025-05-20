@@ -27,7 +27,6 @@ public class Length {
         return new Length(mm / 25.4);
     }
 
-
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
