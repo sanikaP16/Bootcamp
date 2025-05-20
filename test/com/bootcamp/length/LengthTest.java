@@ -29,4 +29,22 @@ class LengthTest {
 
         assertEquals(fromCM,fromMM);
     }
+
+    @Test
+    void addInches(){
+        Length length1 = Length.convertFromInches(2);
+        Length length2 = Length.convertFromInches(2);
+        Length expected = Length.convertFromInches(4);
+
+        assertEquals(expected,length1.add(length2));
+    }
+
+    @Test
+    void addFeetAndInches(){
+        Length length1 = Length.convertFromInches(12);
+        Length length2 = Length.convertFromFeet(1);
+        Length expected = Length.convertFromInches(24);
+
+        assertEquals(expected,length1.add(length2));
+    }
 }

@@ -12,7 +12,7 @@ public class Length {
     }
 
     public static Length convertFromFeet(double feet) {
-        return new Length(feet*12);
+        return new Length(feet * 12);
     }
 
     public static Length convertFromInches(double inches) {
@@ -38,5 +38,11 @@ public class Length {
     @Override
     public int hashCode() {
         return Objects.hashCode(inches);
+    }
+
+    public Length add(Length length2) {
+        double result = this.inches + length2.inches;
+
+        return new Length(result);
     }
 }
