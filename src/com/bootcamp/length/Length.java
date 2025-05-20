@@ -32,7 +32,7 @@ public class Length {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Length length = (Length) o;
-        return Double.compare(inches, length.inches) == 0;
+        return Math.abs(inches - length.inches) < 0.0001;
     }
 
     @Override
@@ -42,7 +42,6 @@ public class Length {
 
     public Length add(Length length2) {
         double result = this.inches + length2.inches;
-
         return new Length(result);
     }
 }

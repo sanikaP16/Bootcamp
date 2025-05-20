@@ -21,7 +21,6 @@ class LengthTest {
         assertEquals(fromInches,formCm);
     }
 
-    @Disabled
     @Test
     void convertFromCmToMM(){
         Length fromCM = Length.convertFromCm(1);
@@ -47,4 +46,22 @@ class LengthTest {
 
         assertEquals(expected,length1.add(length2));
     }
+
+    @Test
+    void addInchesAndCentimeter(){
+        Length length1 = Length.convertFromInches(2);
+        Length length2 = Length.convertFromCm(2.54);
+        Length expected = Length.convertFromInches(3);
+
+        assertEquals(expected,length1.add(length2));
+    }
+    @Test
+    void addMmAndCentimeter(){
+        Length length1 = Length.convertFromMM(20);
+        Length length2 = Length.convertFromCm(10);
+        Length expected = Length.convertFromInches(4.7244);
+
+        assertEquals(expected,length1.add(length2));
+    }
+
 }
